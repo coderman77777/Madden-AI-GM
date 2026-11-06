@@ -2,7 +2,7 @@
 
 [Intro video went public today](https://youtu.be/UuoKjlL5lpY?si=JYGmFyLM_KdQz9eq)
 
-What was done yesterday:
+## What was done yesterday:
 Basic test csv files, team_lookup functionality and get_player functionality.
 
 Target for today:

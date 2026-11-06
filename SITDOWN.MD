@@ -7,15 +7,15 @@
 - team_lookup functionality
 - get_player functionality.
 
-Target for today:
-Build an urgency formula
-Roster evaluation
+## Target for today:
+- Build an urgency formula
+- Roster evaluation
 
-Behaviour tree after roster evaluation
+- Behavior tree after roster evaluation
     - Trade best players for picks
     - Trade picks for good players
 
-I would like to setup SOP's at some point.
+- I would like to setup SOP's at some point.
 
-Log plans in issues.
+- Log plans in issues.
 

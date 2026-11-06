@@ -1,6 +1,6 @@
 # 11-6-2026
 
-(Intro video went public today)[https://youtu.be/UuoKjlL5lpY?si=JYGmFyLM_KdQz9eq]
+[Intro video went public today](https://youtu.be/UuoKjlL5lpY?si=JYGmFyLM_KdQz9eq)
 
 What was done yesterday:
 Basic test csv files, team_lookup functionality and get_player functionality.

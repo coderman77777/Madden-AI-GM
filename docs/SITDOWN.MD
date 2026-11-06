@@ -26,5 +26,5 @@
 Grace Hopper, computer programmer and pioneer, is credited first instance in computer science of using the term "bug"[^source1].
 ![Grace Hopper](https://www.womenshistory.org/sites/default/files/images/2018-07/Hopper-3%20square.jpg)
 
-[^source1]:[source](https://www.computerhistory.org/tdih/september/9/)
+[^source1]:[Grace Hopper Bug story](https://www.computerhistory.org/tdih/september/9/)
 

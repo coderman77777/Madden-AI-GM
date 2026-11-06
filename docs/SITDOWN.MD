@@ -7,6 +7,8 @@
 - team_lookup functionality
 - get_player functionality.
 
+## Today I established: [my mindset with the project](https://github.com/coderman77777/Madden-AI-GM/blob/main/docs/MINDSET.MD)
+
 ## Target for today:
 - Build an urgency formula
 - Roster evaluation

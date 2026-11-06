@@ -21,3 +21,9 @@
 
 - Log plans in issues.
 
+## Fact of the Day
+
+Grace Hopper, computer programmer and pioneer, is credited first instance in computer science of using the term "bug".
+![Grace Hopper](https://www.womenshistory.org/education-resources/biographies/grace-hopper)
+<small>[source](https://www.computerhistory.org/tdih/september/9/)</small>
+

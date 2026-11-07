@@ -3,7 +3,7 @@
 import json
 
 
-MY_TEAM_ID = 11 # THE AI'S TEAM (in our case the Dolphins)
+
 CURRENT_SEASON = 0 # How do we handle being in an offseason on the config?
 # Weights
 
@@ -25,6 +25,8 @@ for name, team_id in TEAMS.items():
     team_lookup[name] = team_id       # Map: "Bears" -> 0
     team_lookup[team_id] = name       # Map: 0 -> "Bears"
 
+MY_TEAM_ID = 11 # THE AI'S TEAM (in our case the Dolphins)
+USER_TEAM = team_lookup[MY_TEAM_ID]
 
 
 

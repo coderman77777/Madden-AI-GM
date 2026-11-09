@@ -18,7 +18,7 @@ def main():
     sorted_teams = sorted(filtered_overalls.items(), key=lambda item: item[1], reverse=True)
     for team, ovr in sorted_teams:
         print(f"{team}: {ovr}")
-   
+#    show user where they rank and add color
 
 
 if __name__ == "__main__":

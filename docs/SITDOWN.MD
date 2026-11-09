@@ -28,3 +28,30 @@ Grace Hopper, computer programmer and pioneer, is credited first instance in com
 
 [^source1]:[Grace Hopper Bug story](https://www.computerhistory.org/tdih/september/9/)
 
+
+
+# 11-9-2026
+
+
+## What was done previously:
+
+    - Started Urgency and Decision trees
+    - Team OVR calc and ranking
+
+## Today:
+    - I would like to review some sources for this project and focus on project structure.
+    - I feel like I am pulled in multiple directions and don't fully understand how to get fully started on this.
+    - [reading 1](https://developers.google.com/machine-learning/guides/rules-of-ml)
+    - [reading 2](https://github.com/drivendataorg/cookiecutter-data-science)
+        - https://realpython.com/python-application-layouts/
+        - https://realpython.com/python-application-layouts/
+
+## Fact of the day:
+    - The Perceptron (1957) is widely considered to be the first true ML Algorithm[^source2]
+    - A simplifeied mathematical model of a single neuron
+    - It took multiple binary inputs and assigned weights to them, and passed them to an activation function that yielded either a 1 or 0
+    - The key innovation: the ability to adjust weights based on input data and target output
+    - source: https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon
+
+
+    [^source2]:[The Perceptron](https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon)

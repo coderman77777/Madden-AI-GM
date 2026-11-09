@@ -53,15 +53,15 @@ def get_team_overall(players: list):
     
     return (math.ceil(avg_ovr))
 
-def get_all_teams_overall(team_lookup_dict: dict):
+def get_all_teams_overall(players_by_team: dict[int, list[dict]], team_lookup: dict)-> dict[str,int]:
     team_overalls = {}
 
-    for key, val in team_lookup_dict.items():
+    for key, val in team_lookup.items():
         if isinstance(key, str):
             team_name = key
             team_id = val
 
-            players = get_players(team_id)
+            players = players_by_team[team_id]
             player_list = simplified_players(players)
 
             team_ovr = get_team_overall(player_list)

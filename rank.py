@@ -1,14 +1,12 @@
-from collections import Counter
-from roster_calc import get_team_overall, get_all_teams_overall
 
-def get_user_team_rank_and_ovr(user_team, team_lookup):
+
+def get_user_team_rank_and_ovr(user_team: str, team_overalls: dict[str, int]):
     """
     Calculates and returns the user team's raw numerical rank and OVR.
     Returns: (rank_int, ovr_int) or (None, None) if team is not found.
     """
-    raw_overalls = get_all_teams_overall(team_lookup)
     excluded = {'Free Agents', 'AFC', 'NFC'}
-    filtered_overalls = {k: v for k, v in raw_overalls.items() if k not in excluded}
+    filtered_overalls = {k: v for k, v in team_overalls.items() if k not in excluded}
     
     # Safety check if team isn't found
     if user_team not in filtered_overalls:

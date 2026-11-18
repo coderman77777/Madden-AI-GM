@@ -1,12 +1,7 @@
-import sys
-import csv
 import math
 
-
-from utils.get_team import get_team
-from get_players import get_players
 from simplified_players import simplified_players
-from config import team_lookup, MY_TEAM_ID, USER_TEAM
+from config import team_lookup
 # Average our team's OVR and compare to the rest of the league and do the same for each position
 
 # with open(r'C:\Users\coderman\Desktop\Developer\Madden-AI-GM\data\test\PLAY.csv', mode='r', newline='', encoding='utf-8') as file:
@@ -22,7 +17,7 @@ from config import team_lookup, MY_TEAM_ID, USER_TEAM
 
     # COL # 21 'PFNA', 22 'PLNA', 'TGID', 'POVR'
 
-def print_team_roster(team_key, output_file):
+def print_team_roster(team_key, players_by_team, output_file):
     if isinstance(team_key, str) and not team_key.isdigit():
         team_name = team_key.strip().title()
         if "49ers" in team_name or "49ers" in team_key:
@@ -34,7 +29,7 @@ def print_team_roster(team_key, output_file):
     if team_id is None:
         print(f"Could not find team: {team_key}", file=output_file)
         return
-    my_players = get_players(team_id)
+    my_players = players_by_team[team_id]
     simplified = simplified_players(my_players)
     simplified.sort(key=lambda player: player[2], reverse=True)
     print(f"Players for {team_name}", file=output_file)

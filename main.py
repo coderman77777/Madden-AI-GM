@@ -1,22 +1,26 @@
-import sys
 from collections import Counter
-from utils.get_team import get_team
-from get_players import get_players
+from load import load_players, group_by_team
 from simplified_players import simplified_players
-from config import team_lookup, MY_TEAM_ID, USER_TEAM, URGENCY
+from config import team_lookup, MY_TEAM_ID, USER_TEAM, URGENCY, TEST_PLAYERS_PATH, PLAY_CSV
 from roster_calc import get_team_overall, get_all_teams_overall
 from urgency import get_urgency
 from decisions import create_strategy
 from rank import get_user_team_rank_and_ovr
+from load import load_players, group_by_team
+
+players = load_players(TEST_PLAYERS_PATH)
 def main():
     print("ARLO Model v0.0.1")
     print("*+*+*")
     print(f"Team: {USER_TEAM}")
     print(f"Team ID: {MY_TEAM_ID}")
-    print("Team OVR: " + str(get_team_overall(simplified_players(get_players(MY_TEAM_ID)))))
-    rank, ovr = get_user_team_rank_and_ovr(USER_TEAM, team_lookup)
+    players = load_players(PLAY_CSV)
+    players_by_team = group_by_team(players)
+    raw_overalls = get_all_teams_overall(players_by_team, team_lookup)
+    print("Team OVR: " + str(get_team_overall(simplified_players(players_by_team[MY_TEAM_ID]))))
+    rank, ovr = get_user_team_rank_and_ovr(USER_TEAM, raw_overalls)
     print(f"Urgency: {get_urgency(URGENCY)}")
-    raw_overalls = get_all_teams_overall(team_lookup)
+    create_strategy(URGENCY, rank, ovr)
     excluded = {'Free Agents', 'AFC', 'NFC'}
     filtered_overalls = {k: v for k, v in raw_overalls.items() if k not in excluded}
     ovr_counts = Counter(filtered_overalls.values())
@@ -58,6 +62,6 @@ def main():
             print(f"{color}--> {rank_str} | {team}: {ovr}{COLOR_RESET}")
         else:
             print(f"{rank_str} | {team}: {ovr}")
-        # print(create_strategy(URGENCY, rank, ovr))
+
 if __name__ == "__main__":
     main()

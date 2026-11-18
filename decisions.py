@@ -1,2 +1,8 @@
+from utils.sigmoid import sigmoid
+
+
 def create_strategy(urgency: int, rank: int, ovr: int):
-    print(f"U : {urgency} R : {rank} O : {ovr}")
+    if urgency == 70 and sigmoid(rank) > .50:
+    
+        print("URGENCY LOW")
+    

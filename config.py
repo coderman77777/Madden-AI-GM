@@ -1,8 +1,13 @@
 # AI GM config.py v 0.0.1
 
 import json
+from pathlib import Path
 
+PROJECT_ROOT = Path(__file__).parent
+DATA_DIR = PROJECT_ROOT / "data" / "test"
+PLAY_CSV = DATA_DIR / "PLAY.csv"
 
+TEST_PLAYERS_PATH = r'C:\Users\coderman\Desktop\Developer\Madden-AI-GM\data\test\PLAY.csv'
 
 CURRENT_SEASON = 0 # How do we handle being in an offseason on the config?
 # Weights

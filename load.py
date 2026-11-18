@@ -13,3 +13,5 @@ def group_by_team(players: list[dict])-> dict[int, list[dict]]:
         team_id = int(player["TGID"])
         team_players[team_id].append(player)
     return team_players
+
+

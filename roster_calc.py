@@ -102,8 +102,9 @@ POS_LOOKUP = {
     10: "LE", 11: "RE", 12: "DT", 13: "LOLB", 14: "MLB",
     15: "ROLB", 16: "CB", 17: "FS", 18: "SS", 19: "K", 20: "P"
 }
-def positional_breakdown(roster: dict)-> None:
+def positional_breakdown(roster: dict)-> dict[str, list[dict]]:
     grouped_players = defaultdict(list)
+
     for player in roster:
         pos_id = int(player['PPOS'])
         pos_name = POS_LOOKUP.get(pos_id, "f{pos_id}")
@@ -115,4 +116,14 @@ def positional_breakdown(roster: dict)-> None:
         print("==========")
         for p in players:
             print(f"{p['PFNA']} {p['PLNA']}: {p['POVR']}")
+
+    return grouped_players
+
+
+def get_positional_group(position_group: str, grouped_players: dict[str, list[dict]] ) -> dict[str, list[dict]]:
+    if position_group == 'QB':
+        return grouped_players.get('QB', [])
+
+
       
+    

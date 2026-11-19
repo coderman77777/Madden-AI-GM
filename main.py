@@ -2,7 +2,7 @@ from collections import Counter
 from load import load_players, group_by_team
 from simplified_players import simplified_players
 from config import team_lookup, MY_TEAM_ID, USER_TEAM, URGENCY, TEST_PLAYERS_PATH, PLAY_CSV
-from roster_calc import get_team_overall, get_all_teams_overall, positional_breakdown
+from roster_calc import get_team_overall, get_all_teams_overall, positional_breakdown, get_positional_group
 from urgency import get_urgency
 from decisions import create_strategy
 from rank import get_user_team_rank_and_ovr
@@ -63,7 +63,7 @@ def main():
             print(f"{color}--> {rank_str} | {team}: {ovr}{COLOR_RESET}")
         else:
             print(f"{rank_str} | {team}: {ovr}")
-    positional_breakdown(players_by_team[MY_TEAM_ID])
+    print(get_positional_group('QB', positional_breakdown(players_by_team[MY_TEAM_ID])))
 
 if __name__ == "__main__":
     main()

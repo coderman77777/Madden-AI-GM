@@ -1,5 +1,5 @@
 import math
-
+from collections import defaultdict
 from simplified_players import simplified_players
 from config import team_lookup
 # Average our team's OVR and compare to the rest of the league and do the same for each position
@@ -71,3 +71,48 @@ def get_all_teams_overall(players_by_team: dict[int, list[dict]], team_lookup: d
 #         if isinstance(key,str):
 #             print_team_roster(team_id, output_file=f)
 
+
+# QB - most important
+# Position Key
+# 0 - QB
+# 1 - RB
+# 2 - FB
+# 3 - WR
+# 4 - TE
+# 5 - LT
+# 6 - LG
+# 7 - C
+# 8 - RG
+# 9 - RT
+# 10 - LE
+# 11 - RE
+# 12 - DT
+# 13 - LOLB
+# 14 - MLB
+# 15 - ROLB
+# 16 - CB
+# 17 - FS
+# 18 - SS 
+# 19 - K
+# 20 - P
+
+POS_LOOKUP = {
+    0: "QB",  1: "HB",  2: "FB",  3: "WR",  4: "TE",
+    5: "LT",  6: "LG",  7: "C",   8: "RG",  9: "RT",
+    10: "LE", 11: "RE", 12: "DT", 13: "LOLB", 14: "MLB",
+    15: "ROLB", 16: "CB", 17: "FS", 18: "SS", 19: "K", 20: "P"
+}
+def positional_breakdown(roster: dict)-> None:
+    grouped_players = defaultdict(list)
+    for player in roster:
+        pos_id = int(player['PPOS'])
+        pos_name = POS_LOOKUP.get(pos_id, "f{pos_id}")
+        grouped_players[pos_name].append(player)
+
+    for pos_name, players in grouped_players.items():
+        players.sort(key=lambda p: int(p['POVR']), reverse=True)
+        print(f"\n {pos_name}")
+        print("==========")
+        for p in players:
+            print(f"{p['PFNA']} {p['PLNA']}: {p['POVR']}")
+      

@@ -140,7 +140,8 @@ def player_value_score(ovr: int, age: int, min_age: int = AGE_BEST, max_age: int
 
 # TODO:
 # def score_positional_value() ...
-
+# calculate which side has better places
+# calculate how many players are above x value
 
       
     

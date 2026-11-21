@@ -1,7 +1,7 @@
 import math
 from collections import defaultdict
 from simplified_players import simplified_players
-from config import team_lookup
+from config import team_lookup, AGE_BEST, AGE_WORST, OVERALL_BEST
 # Average our team's OVR and compare to the rest of the league and do the same for each position
 
 # with open(r'C:\Users\coderman\Desktop\Developer\Madden-AI-GM\data\test\PLAY.csv', mode='r', newline='', encoding='utf-8') as file:
@@ -124,8 +124,22 @@ def get_positional_group(position_group: str, grouped_players: dict[str, list[di
     key = position_group.upper()
     if key not in grouped_players:
         raise ValueError(f"Invalid Position  '{position_group}'. Valid options: {list(grouped_players.keys())}")
-        return grouped_players[key]
+    return grouped_players[key]
+
+
+# calculate positional attributes WHEN LOL?
+def player_value_score(ovr: int, age: int, min_age: int = AGE_BEST, max_age: int = AGE_WORST)-> float:
+    age_score = max(0.0, min(1.0, (max_age - age) / (max_age - min_age))) ** 2
     
+    overall_score = ovr / float(OVERALL_BEST)
+
+    return(0.7 * overall_score) + (0.3 * age_score)
+
+
+
+
+# TODO:
+# def score_positional_value() ...
 
 
       

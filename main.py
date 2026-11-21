@@ -21,7 +21,7 @@ def main():
     
     rank, ovr = get_user_team_rank_and_ovr(USER_TEAM, raw_overalls)
     print(f"Urgency: {get_urgency(URGENCY)}")
-    create_strategy(URGENCY, rank, ovr)
+    create_strategy(URGENCY, rank, ovr, MY_TEAM_ID, players_by_team)
     excluded = {'Free Agents', 'AFC', 'NFC'}
     filtered_overalls = {k: v for k, v in raw_overalls.items() if k not in excluded}
     ovr_counts = Counter(filtered_overalls.values())
@@ -63,7 +63,7 @@ def main():
             print(f"{color}--> {rank_str} | {team}: {ovr}{COLOR_RESET}")
         else:
             print(f"{rank_str} | {team}: {ovr}")
-    print(get_positional_group('QB', positional_breakdown(players_by_team[MY_TEAM_ID])))
+    
 
 if __name__ == "__main__":
     main()

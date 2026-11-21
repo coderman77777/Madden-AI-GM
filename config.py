@@ -48,3 +48,10 @@ URGENCY = 100 - TOTAL_SEASONS_LEFT
 # Breakdown each position find weak areas
 # Compare to other teams
 # Find teams with surplus in certain positions
+
+
+
+# ROSTER 
+AGE_WORST = 40
+AGE_BEST = 18
+OVERALL_BEST = 99

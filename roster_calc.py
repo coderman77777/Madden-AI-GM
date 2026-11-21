@@ -112,17 +112,20 @@ def positional_breakdown(roster: dict)-> dict[str, list[dict]]:
 
     for pos_name, players in grouped_players.items():
         players.sort(key=lambda p: int(p['POVR']), reverse=True)
-        print(f"\n {pos_name}")
-        print("==========")
-        for p in players:
-            print(f"{p['PFNA']} {p['PLNA']}: {p['POVR']}")
+        # print(f"\n {pos_name}")
+        # print("==========")
+        # for p in players:
+        #     print(f"{p['PFNA']} {p['PLNA']}: {p['POVR']}")
 
     return grouped_players
 
 
 def get_positional_group(position_group: str, grouped_players: dict[str, list[dict]] ) -> dict[str, list[dict]]:
-    if position_group == 'QB':
-        return grouped_players.get('QB', [])
+    key = position_group.upper()
+    if key not in grouped_players:
+        raise ValueError(f"Invalid Position  '{position_group}'. Valid options: {list(grouped_players.keys())}")
+        return grouped_players[key]
+    
 
 
       
